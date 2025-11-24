@@ -1,11 +1,8 @@
 #include <iostream>
 import CurrentSource;
-import NetlistParser;
+import Netlist;
 
 int main() {
-    NetlistParser p = NetlistParser("netlist.txt");
+    Netlist p = Netlist("netlist.txt");
     p.print_branches();
-
-    CurrentSource c = CurrentSource(3.5, 1, 2);
-    std::cout << c.value() << " amps\n";
 }
