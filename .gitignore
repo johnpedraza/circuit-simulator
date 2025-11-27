@@ -1,5 +1,17 @@
+# build files
+build/
+
+# object files
+*.o
+
+# PDP-7 assembler output
+a.out
+
+# Circuit Simulator
+CircuitSimulator
+
+# MY notes
 notes/
 
+# something about modules
 gcm.cache/
-
-a.out
