@@ -19,7 +19,7 @@ SRC_DIR := ./src
 
 # Source files
 # TODO: The order here matters. There's probably a better way to do this
-SRCS = Resistor.cpp CurrentSource.cpp Netlist.cpp CircuitSimulator.cpp
+SRCS = Resistor.cpp CurrentSource.cpp Circuit.cpp CircuitSimulator.cpp
 
 # Object files
 # Same name as source files, but with .o extension and in build directory

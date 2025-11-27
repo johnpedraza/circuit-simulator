@@ -1,8 +1,7 @@
 #include <iostream>
-import CurrentSource;
-import Netlist;
+import Circuit;
 
 int main() {
-    Netlist p = Netlist("netlist.txt");
-    p.print_branches();
+    Circuit n = Circuit("netlist.txt");
+    n.print_circuit();
 }
