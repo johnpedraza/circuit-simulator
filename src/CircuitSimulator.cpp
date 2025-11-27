@@ -1,5 +1,5 @@
 #include <iostream>
-import Circuit;
+#include "Circuit.hpp"
 
 int main() {
     Circuit n = Circuit("netlist.txt");
