@@ -1,8 +1,13 @@
 # Compiler
 CXX = g++
 
+# wxWidgets config
+WX_CONFIG   := /usr/bin/wx-config
+WX_CXXFLAGS := $(shell $(WX_CONFIG) --cxxflags)
+WX_LIBS     := $(shell $(WX_CONFIG) --libs)
+
 # Compiler flags
-CXXFLAGS = -Wall -Iinclude
+CXXFLAGS = -Wall -Iinclude $(WX_CXXFLAGS)
 
 # C++ Language Version
 LVERSION := -std=c++23
@@ -25,7 +30,7 @@ OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 
 # Link object files into target executable
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) $(LVERSION) -o $(TARGET) $(OBJS) $(WX_LIBS)
 
 # Compile .cpp files into .o files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
