@@ -13,7 +13,7 @@ CXXFLAGS = -Wall -Iinclude $(WX_CXXFLAGS)
 LVERSION := -std=c++23
 
 # Target executable
-TARGET = CircuitSimulator
+TARGET = Simulator
 
 # Put object files here
 BUILD_DIR := ./build
@@ -22,7 +22,7 @@ BUILD_DIR := ./build
 SRC_DIR := ./src
 
 # Source files
-SRCS = Resistor.cpp Circuit.cpp CircuitSimulator.cpp
+SRCS = Resistor.cpp Circuit.cpp Simulator.cpp
 
 # Object files
 # Same name as source files, but with .o extension and in build directory
