@@ -2,7 +2,7 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall -Iinclude
+CXXFLAGS = -Wall -Iinclude -I/usr/local/include
 
 # C++ Language Version
 LVERSION := -std=c++23
@@ -30,6 +30,10 @@ $(TARGET): $(OBJS)
 # Compile .cpp files into .o files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(LVERSION) -c $< -o $@
+
+# WebAssembly
+wasm:
+	emcc $(CXXFLAGS) -o build_wasm/simulator.js src/* --embed-file netlist.txt
 
 # Remove target executable and all object files
 clean:
