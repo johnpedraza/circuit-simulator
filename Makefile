@@ -33,7 +33,8 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 # WebAssembly
 wasm:
-	emcc $(CXXFLAGS) -o build_wasm/simulator.js src/* --embed-file netlist.txt
+	emcc $(CXXFLAGS) $(LVERSION) -o build_wasm/circuit.js src/* --embed-file netlist.txt -s NO_EXIT_RUNTIME=1 -s EXPORTED_RUNTIME_METHODS=ccall,cwrap
+	# cp build_wasm/* ../johnpedraza.org/
 
 # Remove target executable and all object files
 clean:

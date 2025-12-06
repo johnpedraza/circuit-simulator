@@ -1,7 +1,17 @@
 #include <iostream>
 #include "Circuit.hpp"
+#include <emscripten.h>
+
+Circuit circuit = Circuit("netlist.txt");
 
 int main() {
-    Circuit n = Circuit("netlist.txt");
-    n.print_circuit();
+    std::cout << "Called from main()\n";
+    return 0;
+}
+
+#define EXTERN extern "C"
+
+EXTERN EMSCRIPTEN_KEEPALIVE
+void printCircuit() {
+    circuit.print_circuit();
 }
